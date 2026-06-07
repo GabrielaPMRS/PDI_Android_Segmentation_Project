@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             PDI_Segmentation_ProjectTheme {
                 SegmentationScreen(segmenter)
-                //SegmentationScreen()
             }
         }
     }
@@ -40,7 +39,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun SegmentationScreen(segmenter: Segmenter) {
-//fun SegmentationScreen() {
     val context = androidx.compose.ui.platform.LocalContext.current
 
     var selectedBitmap by remember { mutableStateOf<Bitmap?>(null) }
@@ -98,7 +96,6 @@ fun SegmentationScreen(segmenter: Segmenter) {
                 selectedBitmap?.let { bitmap ->
                     statusText = "Executando segmentacao..."
                     resultBitmap = segmenter.segment(bitmap)
-                    //statusText = "Botao funcionando. Modelo ainda nao carregado."
                     statusText = "Segmentacao concluida."
                 }
             },
